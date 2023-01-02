@@ -1,13 +1,12 @@
 import random
 import time
 
-score = 0 
 
 # scoruri
-def flo(answer): 
-    global score
+def flo(): 
     i = 3
     while i > 0:
+        SCORE = 0
         number1 = random.randint(1,9)
         number2 = random.randint(1,9)
 
@@ -16,12 +15,11 @@ def flo(answer):
         rez = input(f"How much is {number1} + {number2} = ?: ")
         rezultat = int(rez)
 
-        if answer == result:
-            score += 1
+        if rezultat == result:
+            SCORE += 1
         
         i -= 1
-
-print(f"Your score is: {score}")
+    print(f"Your score is: {SCORE}")
 
 # timer
 def timer():
@@ -36,6 +34,6 @@ def timer():
     print("Time's up!")
 
 
-flo(answer)
+flo()
 timer()
 
