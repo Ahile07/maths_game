@@ -1,11 +1,13 @@
 import random
 import time
 
+
+
 # intrebari
 def flo(): 
     i = 3
+    SCORE = 0
     while i > 0:
-        SCORE = 0
         number1 = random.randint(1,9)
         number2 = random.randint(1,9)
 
@@ -34,5 +36,3 @@ def timer():
 
 
 flo()
-timer()
-
