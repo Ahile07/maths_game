@@ -1,7 +1,6 @@
+from tkinter import *
 import random
 import time
-
-
 
 # intrebari
 def flo(): 
@@ -20,6 +19,8 @@ def flo():
             SCORE += 1
         
         i -= 1
+
+    
     print(f"Your score is: {SCORE}")
 
 # timer
@@ -36,3 +37,27 @@ def timer():
 
 
 flo()
+
+def submit_players_names():
+    Label(master,text= "Player 1 name: ", font=("Bebas Neue",20)).grid(row=3,sticky=W)
+    player1_name = Entry(master).grid(row=3,sticky=W, padx=110)
+
+    Label(master,text= "Player 2 name: ", font=("Bebas Neue",20)).grid(row=4,sticky=W)
+    player2_name = Entry(master).grid(row=4,sticky=W, padx=110)
+
+#Main Screen
+master = Tk()
+master.title("BrainMaths")
+
+#Labels
+Label(master,text="How good are you with maths?",font=("Bebas Neue",30)).grid(row=0,sticky=W,pady=10,padx=50)
+#Space row 1
+Label(master,text= " ", font=("Bebas Neue",20)).grid(row=1,sticky=W)
+
+#Space row 5
+Label(master,text= " ", font=("Bebas Neue",20)).grid(row=5,sticky=W)
+
+submit_players_names()
+
+#Button players
+submit_names = Button(master, text = "Sumbit names", command=submit_players_names)
