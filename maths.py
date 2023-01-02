@@ -1,8 +1,7 @@
 import random
 import time
 
-
-# scoruri
+# intrebari
 def flo(): 
     i = 3
     while i > 0:
