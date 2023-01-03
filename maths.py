@@ -32,9 +32,7 @@ def questions_player1():
         if rezultat == result:
             SCORE_PLAYER1 += 1
 
-    #print(f"{player1_name}'s score is: {SCORE_PLAYER1}")
-
-    # intrebari player 1
+# intrebari player 1
 def questions_player2(): 
     
     global SCORE_PLAYER2
@@ -61,8 +59,6 @@ def questions_player2():
         if rezultat == result:
             SCORE_PLAYER2 += 1
 
-    #print(f"{player2_name}'s score is: {SCORE_PLAYER2}")
-
 def winner():
     if SCORE_PLAYER1 == SCORE_PLAYER2:
         print("TIE! Well done both!!")
@@ -71,8 +67,8 @@ def winner():
     else:
         print(f"Congrats {player2_name}, you have WON with a score of \n{player1_name} - {SCORE_PLAYER1} vs {SCORE_PLAYER2} - {player2_name}")
 
+#-------------------------------
 #inceputul jocului
-
 player1_name = input("Please input player 1 name and hit enter: \n")
 player2_name = input("Please input player 2 name and hit enter: \n")
 
@@ -93,7 +89,7 @@ winner()
 def timer():
     total_seconds = 3
 
-    # Run the countdown
+# Run the countdown
     while total_seconds > 0:
         print(total_seconds)
         total_seconds -= 1
@@ -108,19 +104,19 @@ def submit_players_names():
     Label(master,text= "Player 2 name: ", font=("Bebas Neue",20)).grid(row=4,sticky=W)
     player2_name = Entry(master).grid(row=4,sticky=W, padx=110)
 
-    #Main Screen
+#Main Screen
     master = Tk()
     master.title("BrainMaths")
 
-    #Labels
+#Labels
     Label(master,text="How good are you with maths?",font=("Bebas Neue",30)).grid(row=0,sticky=W,pady=10,padx=50)
-    #Space row 1
+#Space row 1
     Label(master,text= " ", font=("Bebas Neue",20)).grid(row=1,sticky=W)
 
-    #Space row 5
+#Space row 5
     Label(master,text= " ", font=("Bebas Neue",20)).grid(row=5,sticky=W)
 
     submit_players_names()
 
-    #Button players
+#Button players
     submit_names = Button(master, text = "Sumbit names", command=submit_players_names)
