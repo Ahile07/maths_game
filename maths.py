@@ -10,7 +10,7 @@ def questions_player1():
     
     global SCORE_PLAYER1
 
-    for question in range(3):
+    for question in range(how_many_games):
         number1 = random.randint(1,9)
         number2 = random.randint(1,9)
 
@@ -39,7 +39,7 @@ def questions_player2():
     
     global SCORE_PLAYER2
 
-    for question in range(3):
+    for question in range(how_many_games):
         number1 = random.randint(1,9)
         number2 = random.randint(1,9)
 
@@ -67,15 +67,22 @@ def winner():
     if SCORE_PLAYER1 == SCORE_PLAYER2:
         print("TIE! Well done both!!")
     elif SCORE_PLAYER1 > SCORE_PLAYER2:
-        print(f"Congrats {player1_name}, you have WON!")
+        print(f"Congrats {player1_name}, you have WON with a score of \n{player1_name} - {SCORE_PLAYER1} vs {SCORE_PLAYER2} - {player2_name}")
     else:
-        print(f"Congrats {player2_name}, you have WON!")
+        print(f"Congrats {player2_name}, you have WON with a score of \n{player1_name} - {SCORE_PLAYER1} vs {SCORE_PLAYER2} - {player2_name}")
 
-player1_name = input("Please input player 1 name and hit enter: ")
-player2_name = input("Please input player 2 name and hit enter: ")
+#inceputul jocului
+
+player1_name = input("Please input player 1 name and hit enter: \n")
+player2_name = input("Please input player 2 name and hit enter: \n")
+
+how_many_games = int(input("How many games you want to play (1-10)? \n"))
+
+if type(how_many_games) != int:
+    print("Please use a number")
 
 questions_player1()
-print(f"Thank you {player1_name}! Now is {player2_name}'s turn! Get ready!")
+print(f"Thank you {player1_name}! \nNow is {player2_name}'s turn! \nGet ready!")
 time.sleep(3)
 questions_player2()
 winner()
