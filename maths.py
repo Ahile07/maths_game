@@ -2,28 +2,85 @@ from tkinter import *
 import random
 import time
 
-SCORE = 0
+SCORE_PLAYER1 = 0
+SCORE_PLAYER2 = 0
 
-# intrebari
-def questions(): 
+# intrebari player 1
+def questions_player1(): 
     
-    global SCORE
+    global SCORE_PLAYER1
 
     for question in range(3):
         number1 = random.randint(1,9)
         number2 = random.randint(1,9)
 
-        result = int(number1 + number2)
-        print(f"Question {question + 1}")
-        rez = input(f"How much is {number1} + {number2} = ?: ")
+        operator_matematic = ["+","-","*"]
+        mathematical_operation = random.choice(operator_matematic)
+        
+        if mathematical_operation == "+":
+
+            result = int(number1 + number2)
+        elif mathematical_operation == "-":
+            result = int(number1 - number2)
+        else:
+            result = int(number1 * number2)
+
+        print(f"{player1_name}'s question number {question + 1}")
+        rez = input(f"How much is {number1} {mathematical_operation} {number2} = ?: ")
         rezultat = int(rez)
 
         if rezultat == result:
-            SCORE += 1
+            SCORE_PLAYER1 += 1
 
-    print(f"Your score is: {SCORE}")
+    #print(f"{player1_name}'s score is: {SCORE_PLAYER1}")
 
-questions()
+    # intrebari player 1
+def questions_player2(): 
+    
+    global SCORE_PLAYER2
+
+    for question in range(3):
+        number1 = random.randint(1,9)
+        number2 = random.randint(1,9)
+
+        operator_matematic = ["+","-","*"]
+        mathematical_operation = random.choice(operator_matematic)
+        
+        if mathematical_operation == "+":
+
+            result = int(number1 + number2)
+        elif mathematical_operation == "-":
+            result = int(number1 - number2)
+        else:
+            result = int(number1 * number2)
+
+        print(f"{player2_name}'s question number {question + 1}")
+        rez = input(f"How much is {number1} {mathematical_operation} {number2} = ?: ")
+        rezultat = int(rez)
+
+        if rezultat == result:
+            SCORE_PLAYER2 += 1
+
+    #print(f"{player2_name}'s score is: {SCORE_PLAYER2}")
+
+def winner():
+    if SCORE_PLAYER1 == SCORE_PLAYER2:
+        print("TIE! Well done both!!")
+    elif SCORE_PLAYER1 > SCORE_PLAYER2:
+        print(f"Congrats {player1_name}, you have WON!")
+    else:
+        print(f"Congrats {player2_name}, you have WON!")
+
+player1_name = input("Please input player 1 name and hit enter: ")
+player2_name = input("Please input player 2 name and hit enter: ")
+
+questions_player1()
+print(f"Thank you {player1_name}! Now is {player2_name}'s turn! Get ready!")
+time.sleep(3)
+questions_player2()
+winner()
+
+
 
 # timer
 def timer():
