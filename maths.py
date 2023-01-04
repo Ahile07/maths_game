@@ -15,7 +15,6 @@ def questions_player(player_name, nr_games):
         mathematical_operation = random.choice(operator_matematic)
         
         if mathematical_operation == "+":
-
             result = int(number1 + number2)
         elif mathematical_operation == "-":
             result = int(number1 - number2)
@@ -31,6 +30,7 @@ def questions_player(player_name, nr_games):
         
     return score
 
+# Find who is the winner
 def winner(SCORE_PLAYER1, SCORE_PLAYER2, player1_name, player2_name):
     if SCORE_PLAYER1 == SCORE_PLAYER2:
         print("TIE! Well done both!!")
@@ -43,7 +43,7 @@ def winner(SCORE_PLAYER1, SCORE_PLAYER2, player1_name, player2_name):
 def timer():
     total_seconds = 3
 
-# Run the countdown
+# Run the countdown - (Neimplementat inca)
     while total_seconds > 0:
         print(total_seconds)
         total_seconds -= 1
@@ -51,6 +51,7 @@ def timer():
 
     print("Time's up!")
 
+# GUI Game (Neimplementat inca)
 def submit_players_names():
     Label(master,text= "Player 1 name: ", font=("Bebas Neue",20)).grid(row=3,sticky=W)
     player1_name = Entry(master).grid(row=3,sticky=W, padx=110)
@@ -76,11 +77,9 @@ def submit_players_names():
     submit_names = Button(master, text = "Sumbit names", command=submit_players_names)
 
 
-
-
+#-------------------------------
+#inceputul jocului
 def joc():
-    #-------------------------------
-    #inceputul jocului
 
     SCORE_PLAYER1 = 0
     SCORE_PLAYER2 = 0
