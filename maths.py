@@ -89,7 +89,7 @@ def joc():
 
     how_many_games = int(input("How many games you want to play (1-10)? \n"))
 
-    print(f"Hey {player1_name}! \nNGet ready!")
+    print(f"Hey {player1_name}! \nGet ready!")
     time.sleep(3)
 
     if type(how_many_games) != int:
