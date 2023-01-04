@@ -2,15 +2,30 @@ from tkinter import *
 import random
 import time
 
-# intrebari
 def questions_player(player_name, nr_games): 
+    """
+    Ask random questions and calculates the score:
     
+    Inputs:
+    player_name: string, name of player that is asked
+    nr_games: int, number of questions to be asked
+    
+    Outputs:
+    score: int, number of questions with correct answer
+
+    """
+    
+    # score should always start from 0
     score = 0
 
+    # ask the number of questions
     for question in range(nr_games):
+        
+        #assign random values to questions
         number1 = random.randint(1,9)
         number2 = random.randint(1,9)
 
+        #chose a random operator from a list
         operator_matematic = ["+","-","*"]
         mathematical_operation = random.choice(operator_matematic)
         
@@ -21,10 +36,14 @@ def questions_player(player_name, nr_games):
         else:
             result = int(number1 * number2)
 
+        #ask the question
         print(f"{player_name}'s question number {question + 1}")
+
+        #wait for result
         rez = input(f"How much is {number1} {mathematical_operation} {number2} = ?: ")
         rezultat = int(rez)
 
+        #check correction
         if rezultat == result:
             score += 1
         
